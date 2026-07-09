@@ -1,0 +1,54 @@
+<main class="main-content">
+    <div class="table-card">
+        <div class="table-card-header">
+            <div>
+                <h3><i class="bi bi-car-front"></i> Vehículos Activos</h3>
+                <p class="table-subtitle">Vehículos actualmente dentro del establecimiento</p>
+            </div>
+            <div class="counter-badge">{{ activosFiltrados.length }}</div>
+        </div>
+
+        <div class="search-box-container">
+            <i class="bi bi-search search-icon"></i>
+            <input type="text" class="search-input" placeholder="Buscar por ticket o placa..." [(ngModel)]="busqueda">
+        </div>
+
+        <div class="responsive-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Ticket</th>
+                        <th>Placa</th>
+                        <th>Entrada</th>
+                        <th>Tiempo</th>
+                        <th>Cobro Estimado</th>
+                        <th>Acción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngIf="cargando">
+                        <td colspan="6">Cargando vehículos activos...</td>
+                    </tr>
+                    <tr *ngIf="!cargando && error">
+                        <td colspan="6">{{ error }}</td>
+                    </tr>
+                    <tr *ngIf="!cargando && !error && activosFiltrados.length === 0">
+                        <td colspan="6">No hay vehículos activos en este momento.</td>
+                    </tr>
+                    <tr *ngFor="let a of activosFiltrados">
+                        <td><strong>AP-{{ a.id_ticket.toString().padStart(6, '0') }}</strong></td>
+                        <td><span class="plate-text">{{ a.placa_vehiculo }}</span></td>
+                        <td><i class="bi bi-calendar3"></i> {{ a.fecha_ingreso }} {{ a.hora_ingreso }}</td>
+                        <td><i class="bi bi-clock"></i> {{ a.horas_texto }}</td>
+                        <td class="price-text">${{ a.cobro_estimado.toFixed(2) }}</td>
+                        <td>
+                            <button class="btn-action-exit" (click)="registrarSalida(a)">
+                                <i class="bi bi-box-arrow-right"></i> Registrar Salida
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</main>
