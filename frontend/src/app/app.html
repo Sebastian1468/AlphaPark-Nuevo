@@ -1,0 +1,35 @@
+<ng-container *ngIf="mostrarShell; else soloOutlet">
+    <header class="panel-header">
+        <div class="brand-box">
+            <div class="icon-square"><i class="bi bi-car-front-fill"></i></div>
+            <div>
+                <h2>AlphaPark</h2>
+                <p>Sistema de Gestión de Estacionamientos</p>
+            </div>
+        </div>
+        <div class="user-box">
+            <div class="user-info">
+                <span class="user-name">{{ auth.getUsuario()?.nombre_usuario }}</span>
+                <span class="user-role">{{ auth.getUsuario()?.rol }}</span>
+            </div>
+            <button class="btn-logout" (click)="logout()"><i class="bi bi-box-arrow-right"></i> Salir</button>
+        </div>
+    </header>
+
+    <nav class="panel-nav" *ngIf="!esGerente">
+        <a routerLink="/registro" routerLinkActive="active" class="nav-item"><i class="bi bi-plus-circle-fill"></i> Registrar Entrada</a>
+        <a routerLink="/mapa" routerLinkActive="active" class="nav-item"><i class="bi bi-geo-alt-fill"></i> Mapa Ocupación</a>
+        <a routerLink="/activos" routerLinkActive="active" class="nav-item"><i class="bi bi-car-front"></i> Vehículos Activos</a>
+        <a routerLink="/historial" routerLinkActive="active" class="nav-item"><i class="bi bi-clock-history"></i> Historial</a>
+    </nav>
+
+    <nav class="panel-nav" *ngIf="esGerente">
+        <a routerLink="/dashboard" routerLinkActive="active" class="nav-item"><i class="bi bi-speedometer2"></i> Dashboard Gerencial</a>
+    </nav>
+
+    <router-outlet></router-outlet>
+</ng-container>
+
+<ng-template #soloOutlet>
+    <router-outlet></router-outlet>
+</ng-template>

@@ -1,0 +1,350 @@
+/* =========================================================
+   Landing page de AlphaPark — usa la misma paleta que el
+   resto del sistema (ver login.css / app.css):
+   primario #0A58CA, fondo #F8F9FA, texto #212529, muted #6C757D
+   ========================================================= */
+
+.landing {
+    margin: -24px -40px;
+    background: #F8F9FA;
+    color: #212529;
+    overflow-x: hidden;
+}
+
+/* --- NAV --- */
+.landing-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 48px;
+    background: white;
+    border-bottom: 1px solid #E9ECEF;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.brand-box { display: flex; align-items: center; gap: 14px; }
+
+.icon-square {
+    background-color: #0A58CA;
+    color: white;
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    flex-shrink: 0;
+}
+
+.brand-box h2 { font-size: 20px; font-weight: 700; line-height: 1.1; }
+.brand-box p { font-size: 12px; color: #6C757D; }
+
+.nav-links { display: flex; gap: 28px; }
+.nav-links a {
+    font-size: 14px;
+    font-weight: 600;
+    color: #495057;
+    text-decoration: none;
+}
+.nav-links a:hover { color: #0A58CA; }
+
+.btn-nav-login {
+    background: #0A58CA;
+    color: white !important;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+}
+.btn-nav-login:hover { background: #084298; }
+
+/* --- HERO --- */
+.hero {
+    padding: 88px 48px 64px;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #E7F0FF;
+    color: #0A58CA;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+}
+
+.hero h1 {
+    font-size: 44px;
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+    margin-bottom: 20px;
+}
+
+.hero-subtitle {
+    font-size: 16px;
+    color: #495057;
+    line-height: 1.6;
+    max-width: 620px;
+    margin-bottom: 36px;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 48px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.btn-primary {
+    background: #0A58CA;
+    color: white;
+    padding: 14px 26px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 8px 20px rgba(10, 88, 202, 0.25);
+}
+.btn-primary:hover { background: #084298; }
+
+.btn-secondary {
+    background: white;
+    color: #0A58CA;
+    border: 1px solid #CED4DA;
+    padding: 14px 26px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+}
+.btn-secondary:hover { border-color: #0A58CA; background: #E7F0FF; }
+
+.hero-stats {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.stat-chip {
+    background: white;
+    border: 1px solid #E9ECEF;
+    border-radius: 12px;
+    padding: 14px 22px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 150px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+}
+.stat-value { font-size: 20px; font-weight: 800; color: #0A58CA; }
+.stat-label { font-size: 12px; color: #6C757D; font-weight: 600; margin-top: 2px; }
+
+/* --- SECCIONES GENERALES --- */
+section.features,
+section.how-it-works,
+section.use-cases {
+    padding: 72px 48px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+section h2 {
+    font-size: 30px;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.section-sub {
+    text-align: center;
+    color: #6C757D;
+    font-size: 15px;
+    max-width: 560px;
+    margin: 0 auto 44px;
+}
+
+/* --- FEATURES --- */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.feature-card {
+    background: white;
+    border: 1px solid #E9ECEF;
+    border-radius: 14px;
+    padding: 26px 22px;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.feature-card:hover { transform: translateY(-4px); box-shadow: 0 12px 24px rgba(0,0,0,0.06); }
+
+.feature-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    background: #E7F0FF;
+    color: #0A58CA;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    margin-bottom: 16px;
+}
+
+.feature-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 8px; }
+.feature-card p { font-size: 13px; color: #6C757D; line-height: 1.55; }
+
+/* --- CÓMO FUNCIONA --- */
+.steps {
+    display: flex;
+    align-items: stretch;
+    gap: 8px;
+}
+
+.step-card {
+    flex: 1;
+    background: white;
+    border: 1px solid #E9ECEF;
+    border-radius: 14px;
+    padding: 30px 20px;
+    text-align: center;
+    position: relative;
+}
+
+.step-number {
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 28px;
+    height: 28px;
+    background: #0A58CA;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.step-icon { font-size: 28px; color: #0A58CA; margin: 10px 0 14px; display: block; }
+.step-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 8px; }
+.step-card p { font-size: 13px; color: #6C757D; line-height: 1.5; }
+
+.step-connector {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #CED4DA;
+    font-size: 20px;
+    flex: 0 0 24px;
+}
+
+/* --- CASOS DE USO --- */
+.use-cases-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.use-case-card {
+    background: #E7F0FF;
+    border-radius: 14px;
+    padding: 28px 22px;
+    text-align: center;
+}
+.use-case-card i { font-size: 26px; color: #0A58CA; margin-bottom: 12px; display: block; }
+.use-case-card h4 { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+.use-case-card p { font-size: 13px; color: #495057; line-height: 1.5; }
+
+/* --- CTA FINAL --- */
+.cta-final {
+    background: #0A58CA;
+    color: white;
+    text-align: center;
+    padding: 72px 48px;
+    margin-top: 24px;
+}
+.cta-final h2 { color: white; margin-bottom: 12px; }
+.cta-final p { color: #DCE9FC; max-width: 480px; margin: 0 auto 32px; font-size: 15px; }
+
+.cta-actions {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-outline-light {
+    background: transparent;
+    color: white;
+    border: 1px solid rgba(255,255,255,0.5);
+    padding: 14px 26px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+.btn-outline-light:hover { background: rgba(255,255,255,0.12); }
+
+.cta-final .btn-primary {
+    background: white;
+    color: #0A58CA;
+    box-shadow: none;
+}
+.cta-final .btn-primary:hover { background: #E7F0FF; }
+
+/* --- FOOTER --- */
+.landing-footer {
+    text-align: center;
+    padding: 32px 48px;
+    background: #212529;
+    color: #ADB5BD;
+    font-size: 13px;
+}
+.footer-brand {
+    font-size: 16px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 900px) {
+    .features-grid { grid-template-columns: repeat(2, 1fr); }
+    .use-cases-grid { grid-template-columns: 1fr; }
+    .steps { flex-direction: column; }
+    .step-connector { transform: rotate(90deg); }
+    .hero h1 { font-size: 32px; }
+    .nav-links { display: none; }
+}

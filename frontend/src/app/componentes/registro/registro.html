@@ -1,0 +1,20 @@
+<main class="main-content">
+    <div class="form-card">
+        <div class="form-card-header">
+            <h3><i class="bi bi-plus-circle"></i> Registrar Entrada</h3>
+            <p>Generar ticket de ingreso para un nuevo vehículo</p>
+        </div>
+
+        <div class="form-body">
+            <div class="input-group">
+                <label for="placa">Placa</label>
+                <input type="text" id="placa" class="input-field" placeholder="ABC-123" [(ngModel)]="placaVehiculo">
+                <span class="input-hint">Ingresa la placa del vehículo para registrar su ingreso.</span>
+            </div>
+
+            <button class="btn-submit" (click)="generarTicket()">
+                <i class="bi bi-printer"></i> Generar Ticket de Entrada
+            </button>
+        </div>
+    </div>
+</main>
